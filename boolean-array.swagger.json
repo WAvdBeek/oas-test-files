@@ -42,7 +42,7 @@
             }
           }
         }
-      }
+      },
       "post": {
         "description": "UPDATE for boolean array test resource",
         "parameters": [
@@ -57,8 +57,7 @@
             "x-example": {
               "booleanArray":   [true]
             }
-          }
-          
+          }          
         ],
         "responses": {
           "200": {
