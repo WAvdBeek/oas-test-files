@@ -1,0 +1,103 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "boolean array",
+    "version": "2019-03-04",
+    "license": {
+      "name": " License",
+      "url": " ",
+      "x-copyright": " "
+    },
+    "termsOfService": "  "
+  },
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/booleanArrayURI": {
+      "get": {
+        "description": "boolean array",
+        "parameters": [
+          {
+            "$ref": "#/parameters/interface"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "x-example": {
+              "rt": [
+                "x.test.booleanarray"
+              ],
+              "booleanArray":   [ true, false] 
+            },
+            "schema": {
+              "$ref": "#/definitions/booleanArray"
+            }
+          }
+        }
+      }
+    }
+  },
+  "parameters": {
+    "interface": {
+      "in": "query",
+      "name": "if",
+      "type": "string",
+      "enum": [
+        "oic.if.rw",
+        "oic.if.baseline"
+      ]
+    }
+  },
+  "definitions": {
+    "booleanArray": {
+      "properties": {
+        "booleanArray": {
+          "description": "The Attributes supported by this Resource.",
+          "items": {
+            "type": "boolean"
+          },
+          "uniqueItems": true,
+          "readOnly": true,
+          "type": "array"
+        },
+        "rt": {
+          "description": "The Resource Type.",
+          "items": {
+            "enum": [
+              "x.test.booleanarray"
+            ],
+            "type": "string"
+          },
+          "uniqueItems": true,
+          "readOnly": true,
+          "type": "array"
+        },
+        "if": {
+          "description": "The OCF Interface set supported by this Resource.",
+          "items": {
+            "enum": [
+              "oic.if.rw", "oic.if.baseline"
+            ],
+            "type": "string"
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "readOnly": true,
+          "type": "array"
+        }
+      },
+      "type": "object",
+      "required": [
+        "booleanArray"
+      ]
+    }
+  }
+}
