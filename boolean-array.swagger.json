@@ -30,12 +30,44 @@
         ],
         "responses": {
           "200": {
-            "description": "",
+            "description": "RETRIEVE for array of booleans",
             "x-example": {
               "rt": [
                 "x.test.booleanarray"
               ],
               "booleanArray":   [ true, false] 
+            },
+            "schema": {
+              "$ref": "#/definitions/booleanArray"
+            }
+          }
+        }
+      }
+      "post": {
+        "description": "UPDATE for boolean array test resource",
+        "parameters": [
+          {
+            "$ref": "#/parameters/interface"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": { "$ref": "#/definitions/booleanArray" },
+            "x-example": {
+              "booleanArray":   [true]
+            }
+          }
+          
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "x-example": {
+              "rt": [
+                "x.test.booleanarray"
+              ],
+              "booleanArray":   [true]
             },
             "schema": {
               "$ref": "#/definitions/booleanArray"
